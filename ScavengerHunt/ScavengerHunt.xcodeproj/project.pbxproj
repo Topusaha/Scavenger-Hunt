@@ -56,6 +56,10 @@
 		040883962B8E50B800E0E55A /* ScavengerHunt */ = {
 			isa = PBXGroup;
 			children = (
+				040883AE2B8E5FC000E0E55A /* Model */,
+				040883AD2B8E5FB500E0E55A /* Task Detail */,
+				040883AC2B8E5F8400E0E55A /* Task Compose */,
+				040883AB2B8E5F6C00E0E55A /* Task List */,
 				040883972B8E50B800E0E55A /* AppDelegate.swift */,
 				040883992B8E50B800E0E55A /* SceneDelegate.swift */,
 				0408839B2B8E50B800E0E55A /* ViewController.swift */,
@@ -65,6 +69,34 @@
 				040883A52B8E50B800E0E55A /* Info.plist */,
 			);
 			path = ScavengerHunt;
+			sourceTree = "<group>";
+		};
+		040883AB2B8E5F6C00E0E55A /* Task List */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Task List";
+			sourceTree = "<group>";
+		};
+		040883AC2B8E5F8400E0E55A /* Task Compose */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Task Compose";
+			sourceTree = "<group>";
+		};
+		040883AD2B8E5FB500E0E55A /* Task Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Task Detail";
+			sourceTree = "<group>";
+		};
+		040883AE2B8E5FC000E0E55A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
