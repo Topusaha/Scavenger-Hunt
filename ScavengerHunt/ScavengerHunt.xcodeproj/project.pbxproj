@@ -16,6 +16,7 @@
 		040883B02B8E620200E0E55A /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040883AF2B8E620200E0E55A /* TaskListViewController.swift */; };
 		040883B22B8E628C00E0E55A /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040883B12B8E628C00E0E55A /* TaskCell.swift */; };
 		040883B62B8E7F1400E0E55A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040883B52B8E7F1400E0E55A /* Task.swift */; };
+		046749002B90DB4C00E384BE /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046748FF2B90DB4C00E384BE /* TaskDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		040883AF2B8E620200E0E55A /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		040883B12B8E628C00E0E55A /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		040883B52B8E7F1400E0E55A /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		046748FF2B90DB4C00E384BE /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		040883AD2B8E5FB500E0E55A /* Task Detail */ = {
 			isa = PBXGroup;
 			children = (
+				046748FF2B90DB4C00E384BE /* TaskDetailViewController.swift */,
 			);
 			path = "Task Detail";
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046749002B90DB4C00E384BE /* TaskDetailViewController.swift in Sources */,
 				0408839C2B8E50B800E0E55A /* ViewController.swift in Sources */,
 				040883B02B8E620200E0E55A /* TaskListViewController.swift in Sources */,
 				040883982B8E50B800E0E55A /* AppDelegate.swift in Sources */,

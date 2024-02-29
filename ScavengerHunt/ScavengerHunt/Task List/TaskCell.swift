@@ -11,7 +11,10 @@ import UIKit
 class TaskCell: UITableViewCell {
 
    
-    @IBOutlet weak var completed: UIImageView!
+    
+    
     @IBOutlet weak var task: UILabel!
+    
+    
     
 }

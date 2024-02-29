@@ -8,6 +8,7 @@
 import Foundation
 
 
-class Task {
-    
+struct Task {
+    var name: String?
+    var completed: Bool?
 }
