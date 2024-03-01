@@ -10,9 +10,9 @@ import UIKit
 class TaskListViewController: UIViewController, UITableViewDataSource {
    
     var tasks: [Task] = [
-        Task(name: "Find the Specialized Services Office", completed: false),
-        Task(name: "Find the Science Building Room 150", completed: false),
-        Task(name: "Find the career center in S150", completed: false)
+        Task(name: "Specialized Services Office", completed: false, description: "Find the Specialized Services Office in the K building and take a picture with Ms. Rak"),
+        Task(name: "Science Building 150", completed: false, description: "Go into the science building and find room 150 which is a student lounge for STEM students"),
+        Task(name: "Career Center", completed: false, description: "Find the career center in S150 and take a picture with one of the career advisors")
     ]
     
     
@@ -47,6 +47,18 @@ class TaskListViewController: UIViewController, UITableViewDataSource {
         taskList.dataSource = self
         
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let selectedIndexPath = taskList.indexPathForSelectedRow else { return }
+
+        let selectedTask = tasks[selectedIndexPath.row]
+        
+        guard let detailViewController = segue.destination as? TaskDetailViewController else { return }
+
+        detailViewController.task = selectedTask
+
     }
 
     

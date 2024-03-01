@@ -11,4 +11,5 @@ import Foundation
 struct Task {
     var name: String?
     var completed: Bool?
+    var description: String 
 }
