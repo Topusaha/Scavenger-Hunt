@@ -17,6 +17,7 @@
 		040883B22B8E628C00E0E55A /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040883B12B8E628C00E0E55A /* TaskCell.swift */; };
 		040883B62B8E7F1400E0E55A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040883B52B8E7F1400E0E55A /* Task.swift */; };
 		046749002B90DB4C00E384BE /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046748FF2B90DB4C00E384BE /* TaskDetailViewController.swift */; };
+		046749022B927D3500E384BE /* TaskAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046749012B927D3500E384BE /* TaskAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		040883B12B8E628C00E0E55A /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		040883B52B8E7F1400E0E55A /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		046748FF2B90DB4C00E384BE /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		046749012B927D3500E384BE /* TaskAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				046748FF2B90DB4C00E384BE /* TaskDetailViewController.swift */,
+				046749012B927D3500E384BE /* TaskAnnotationView.swift */,
 			);
 			path = "Task Detail";
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				0408839C2B8E50B800E0E55A /* ViewController.swift in Sources */,
 				040883B02B8E620200E0E55A /* TaskListViewController.swift in Sources */,
 				040883982B8E50B800E0E55A /* AppDelegate.swift in Sources */,
+				046749022B927D3500E384BE /* TaskAnnotationView.swift in Sources */,
 				0408839A2B8E50B800E0E55A /* SceneDelegate.swift in Sources */,
 				040883B62B8E7F1400E0E55A /* Task.swift in Sources */,
 				040883B22B8E628C00E0E55A /* TaskCell.swift in Sources */,

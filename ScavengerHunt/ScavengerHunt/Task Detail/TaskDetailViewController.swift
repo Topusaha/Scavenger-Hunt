@@ -7,12 +7,14 @@
 
 import UIKit
 import PhotosUI
+import MapKit
 
 class TaskDetailViewController: UIViewController {
     
 
     var task: Task!
     
+    @IBOutlet weak var map: MKMapView!
     
     @IBOutlet weak var taskName: UILabel!
     
@@ -22,6 +24,7 @@ class TaskDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        map.delegate = self
 
 
         taskName.text = task.name
@@ -103,6 +106,44 @@ class TaskDetailViewController: UIViewController {
 }
 
 extension TaskDetailViewController: PHPickerViewControllerDelegate {
+    private func showAlert(for error: Error) {
+        let alert = UIAlertController(
+            title: "Error",
+            message: error.localizedDescription,
+            preferredStyle: .alert
+        )
+
+        let okAction = UIAlertAction(
+            title: "OK",
+            style: .default,
+            handler: nil
+        )
+
+        alert.addAction(okAction)
+
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func updateUI() {
+        
+    }
+    
+    private func updateMapView() {
+        guard let coordinates = self.task.location else {return}
+        
+        
+        let region = MKCoordinateRegion(center: coordinates, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        map.setRegion(region, animated: true)
+        
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinates
+        map.addAnnotation(annotation)
+        
+        map.register(TaskAnnotationView.self, forAnnotationViewWithReuseIdentifier: TaskAnnotationView.identifier)
+
+    }
+    
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         picker.dismiss(animated: true)
         
@@ -115,9 +156,47 @@ extension TaskDetailViewController: PHPickerViewControllerDelegate {
 
         print("📍 Image location coordinate: \(location.coordinate)")
         
+        
+        guard let provider = result?.itemProvider, provider.canLoadObject(ofClass: UIImage.self) else {return}
+        
+        provider.loadObject(ofClass: UIImage.self) { [weak self] object, error in
+            
+            if let error = error {
+                DispatchQueue.main.async { [weak self] in self?.showAlert(for:error) }
+            }
+            
+            guard let image = object as? UIImage else { return }
+
+            print("🌉 We have an image!")
+            
+            DispatchQueue.main.async { [weak self] in
+
+                    // Set the picked image and location on the task
+                    self?.task.image = image
+                    self?.task.location = location.coordinate
+
+                    // Update the UI since we've updated the task
+                    self?.updateUI()
+
+                    // Update the map view since we now have an image an location
+                    self?.updateMapView()
+                }
+        }
+    }
+}
+
+extension TaskDetailViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+
+       
+        guard let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: TaskAnnotationView.identifier, for: annotation) as? TaskAnnotationView else {
+            fatalError("Unable to dequeue TaskAnnotationView")
+        }
+
+        annotationView.configure(with: task.image)
+        return annotationView
     }
     
-    
-    
-    
 }
+
+

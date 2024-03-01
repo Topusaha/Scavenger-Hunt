@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -99,8 +100,18 @@
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 </preferredSymbolConfiguration>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zip-nP-NFb">
-                                <rect key="frame" x="0.0" y="409" width="393" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xc-jx-i4F">
+                                <rect key="frame" x="50" y="184" width="343" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cjt-zU-J25">
+                                <rect key="frame" x="5" y="244" width="383" height="277"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zip-nP-NFb">
+                                <rect key="frame" x="0.0" y="480" width="393" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="K1r-aF-e05"/>
                                 </constraints>
@@ -110,24 +121,22 @@
                                     <action selector="upload:" destination="7Xr-Sf-KzH" eventType="touchUpInside" id="R0P-Eq-ILs"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xc-jx-i4F">
-                                <rect key="frame" x="50" y="184" width="343" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lBk-4t-9he"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="lBk-4t-9he" firstAttribute="trailing" secondItem="Cjt-zU-J25" secondAttribute="trailing" constant="5" id="1ge-fJ-o5K"/>
                             <constraint firstItem="Zip-nP-NFb" firstAttribute="trailing" secondItem="lBk-4t-9he" secondAttribute="trailing" id="8DP-ag-iiL"/>
                             <constraint firstItem="SfL-gH-ix2" firstAttribute="top" secondItem="lBk-4t-9he" secondAttribute="top" constant="33" id="CaF-BB-Sem"/>
                             <constraint firstItem="m9i-x4-XRk" firstAttribute="leading" secondItem="lBk-4t-9he" secondAttribute="leading" constant="50" id="Gaw-Mp-WtQ"/>
                             <constraint firstItem="Zip-nP-NFb" firstAttribute="leading" secondItem="5A7-8o-rqg" secondAttribute="leading" id="Ige-0S-ZEe"/>
-                            <constraint firstItem="Zip-nP-NFb" firstAttribute="top" secondItem="m9i-x4-XRk" secondAttribute="bottom" constant="251" id="Jd3-sX-kmb"/>
+                            <constraint firstItem="Zip-nP-NFb" firstAttribute="top" secondItem="m9i-x4-XRk" secondAttribute="bottom" constant="400" id="Jd3-sX-kmb"/>
+                            <constraint firstItem="Cjt-zU-J25" firstAttribute="leading" secondItem="lBk-4t-9he" secondAttribute="leading" constant="5" id="WBs-bX-gwp"/>
                             <constraint firstItem="m9i-x4-XRk" firstAttribute="top" secondItem="lBk-4t-9he" secondAttribute="top" constant="30" id="WPb-pA-d7b"/>
                             <constraint firstItem="lBk-4t-9he" firstAttribute="trailing" secondItem="3xc-jx-i4F" secondAttribute="trailing" id="XzL-Vw-09E"/>
+                            <constraint firstItem="Zip-nP-NFb" firstAttribute="top" secondItem="Cjt-zU-J25" secondAttribute="bottom" constant="37" id="Z8h-eJ-cKG"/>
                             <constraint firstItem="m9i-x4-XRk" firstAttribute="leading" secondItem="SfL-gH-ix2" secondAttribute="trailing" constant="14.67" id="eGc-Cx-AiR"/>
+                            <constraint firstItem="Cjt-zU-J25" firstAttribute="top" secondItem="3xc-jx-i4F" secondAttribute="bottom" constant="39.670000000000002" id="ej2-0a-Eve"/>
                             <constraint firstItem="3xc-jx-i4F" firstAttribute="top" secondItem="m9i-x4-XRk" secondAttribute="bottom" constant="26" id="wyv-d9-wzd"/>
                             <constraint firstItem="3xc-jx-i4F" firstAttribute="leading" secondItem="lBk-4t-9he" secondAttribute="leading" constant="50" id="xEV-8s-hYA"/>
                         </constraints>
@@ -135,6 +144,7 @@
                     <navigationItem key="navigationItem" id="NPT-6l-aEC"/>
                     <connections>
                         <outlet property="completedSignal" destination="SfL-gH-ix2" id="an0-1N-eqd"/>
+                        <outlet property="map" destination="Cjt-zU-J25" id="8wq-bh-V7F"/>
                         <outlet property="taskDescription" destination="3xc-jx-i4F" id="QP8-KL-Qcz"/>
                         <outlet property="taskName" destination="m9i-x4-XRk" id="gXT-Ea-4iv"/>
                     </connections>
