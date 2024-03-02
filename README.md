@@ -24,11 +24,13 @@ The following **optional** features are implemented:
 
 Here is a reminder on how to embed Loom videos on GitHub. Feel free to remove this reminder once you upload your README. 
 
-[Guide]](https://www.youtube.com/watch?v=GA92eKlYio4) .
+## Notes - Challenges
 
-## Notes
-
-Describe any challenges encountered while building the app.
+When building the app, I had to read through lots of the documentation on photos,
+and MapKit and watch videos to see the different ways they are implimented. I also
+coded the to do list from scratch which highlighted some styling/UIKit issues I
+had. For exmaple, getting the checkbox image to be marked as completed, using
+buttons to activate methods, and navigation controls. 
 
 ## License
 
