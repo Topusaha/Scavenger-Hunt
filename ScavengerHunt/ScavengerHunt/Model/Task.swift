@@ -11,7 +11,7 @@ import PhotosUI
 
 struct Task {
     var name: String?
-    var completed: Bool?
+    var completed: Bool? = false
     var description: String
     var image: UIImage?
     var location: CLLocationCoordinate2D?

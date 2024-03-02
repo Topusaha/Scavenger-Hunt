@@ -9,12 +9,25 @@ import UIKit
 
 class TaskListViewController: UIViewController, UITableViewDataSource {
    
+    @IBOutlet weak var completedImage: UIImageView!
+    
+    
     var tasks: [Task] = [
         Task(name: "Specialized Services Office", completed: false, description: "Find the Specialized Services Office in the K building and take a picture with Ms. Rak"),
         Task(name: "Science Building 150", completed: false, description: "Go into the science building and find room 150 which is a student lounge for STEM students"),
         Task(name: "Career Center", completed: false, description: "Find the career center in S150 and take a picture with one of the career advisors")
     ]
     
+    
+    
+    private func updateUI(task: Task) {
+        let image = UIImage(systemName: task.completed! ? "circle.inset.filled" : "circle")
+        completedImage.image = image?.withRenderingMode(.alwaysTemplate)
+        let color: UIColor = task.completed! ? .systemBlue : .tertiaryLabel
+        
+        completedImage.tintColor = color
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
@@ -25,6 +38,7 @@ class TaskListViewController: UIViewController, UITableViewDataSource {
         let cell = taskList.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath) as! TaskCell
         
         cell.task.text = tasks[indexPath.row].name
+        
         
         
         return cell

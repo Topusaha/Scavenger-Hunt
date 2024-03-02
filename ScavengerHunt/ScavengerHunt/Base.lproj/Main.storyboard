@@ -28,26 +28,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgg-sE-4K0">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Task Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgg-sE-4K0">
                                                     <rect key="frame" x="49.333333333333343" y="16" width="84" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.inset.filled" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KLh-vZ-3tL">
-                                                    <rect key="frame" x="20" y="17.666666666666664" width="19.333333333333329" height="16"/>
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" weight="light">
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    </preferredSymbolConfiguration>
-                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="KLh-vZ-3tL" secondAttribute="bottom" constant="6" id="3SR-7l-9Cz"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="mgg-sE-4K0" secondAttribute="bottom" constant="5" id="4DQ-QM-gSZ"/>
-                                                <constraint firstItem="mgg-sE-4K0" firstAttribute="leading" secondItem="KLh-vZ-3tL" secondAttribute="trailing" constant="10" id="6Ei-zJ-wKC"/>
                                                 <constraint firstItem="mgg-sE-4K0" firstAttribute="top" secondItem="FHy-D0-c6j" secondAttribute="topMargin" constant="5" id="6Hc-Lj-CsC"/>
-                                                <constraint firstItem="KLh-vZ-3tL" firstAttribute="top" secondItem="FHy-D0-c6j" secondAttribute="topMargin" constant="6" id="Ns2-3E-lmO"/>
-                                                <constraint firstItem="KLh-vZ-3tL" firstAttribute="leading" secondItem="FHy-D0-c6j" secondAttribute="leadingMargin" id="e3g-5k-99b"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -94,7 +84,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.inset.filled" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SfL-gH-ix2">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SfL-gH-ix2">
                                 <rect key="frame" x="15.999999999999998" y="136.66666666666666" width="19.333333333333329" height="19.333333333333343"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" weight="light">
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -143,7 +133,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="NPT-6l-aEC"/>
                     <connections>
-                        <outlet property="completedSignal" destination="SfL-gH-ix2" id="an0-1N-eqd"/>
+                        <outlet property="detailedCompletedImage" destination="SfL-gH-ix2" id="V6y-tM-qV2"/>
                         <outlet property="map" destination="Cjt-zU-J25" id="8wq-bh-V7F"/>
                         <outlet property="taskDescription" destination="3xc-jx-i4F" id="QP8-KL-Qcz"/>
                         <outlet property="taskName" destination="m9i-x4-XRk" id="gXT-Ea-4iv"/>
@@ -179,7 +169,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="circle.inset.filled" catalog="system" width="128" height="123"/>
+        <image name="circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

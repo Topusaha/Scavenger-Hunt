@@ -12,6 +12,8 @@ import MapKit
 class TaskDetailViewController: UIViewController {
     
 
+    @IBOutlet weak var detailedCompletedImage: UIImageView!
+    
     var task: Task!
     
     @IBOutlet weak var map: MKMapView!
@@ -25,12 +27,16 @@ class TaskDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         map.delegate = self
+        
+        
 
 
         taskName.text = task.name
         taskName.numberOfLines = 0
         taskDescription.text = task.description
         taskDescription.numberOfLines = 0
+        
+        
         
     }
     
@@ -126,6 +132,20 @@ extension TaskDetailViewController: PHPickerViewControllerDelegate {
     
     private func updateUI() {
         
+        let image = UIImage(systemName: task.completed! ? "circle.inset.filled" : "circle")
+        detailedCompletedImage.image = image?.withRenderingMode(.alwaysTemplate)
+        let color: UIColor = task.completed! ? .systemBlue : .tertiaryLabel
+        
+        detailedCompletedImage.tintColor = color
+        taskName.textColor = color
+        taskDescription.textColor = color
+        
+        print("Image Loaded: \(image != nil)")
+        print("ImageView Image Set")
+
+
+        
+        
     }
     
     private func updateMapView() {
@@ -155,9 +175,12 @@ extension TaskDetailViewController: PHPickerViewControllerDelegate {
         }
 
         print("📍 Image location coordinate: \(location.coordinate)")
+
         
         
         guard let provider = result?.itemProvider, provider.canLoadObject(ofClass: UIImage.self) else {return}
+        
+        self.task.completed = true
         
         provider.loadObject(ofClass: UIImage.self) { [weak self] object, error in
             
